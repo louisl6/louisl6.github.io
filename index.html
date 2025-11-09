@@ -518,6 +518,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sequence0.style.transition = "opacity 2.5s ease";
         sequence0.style.opacity = "0";
 
+        console.log(`Transition vers la séquence ${sequenceNumber}`);
         // Scroll fluide après le fondu
         setTimeout(() => {
             document.getElementById(`sequence-${sequenceNumber}`).scrollIntoView({
