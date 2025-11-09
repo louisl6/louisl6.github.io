@@ -132,6 +132,7 @@
             color: var(--beige-light);
             position: relative;
             overflow: hidden;
+            padding-bottom: 10%;
         }
         
         .cinematic-intro {
@@ -627,6 +628,41 @@
                 font-size: 48px;
             }
         }
+
+        /* Titres responsives pour votre portfolio */
+h1 {
+    font-size: clamp(28px, 6vw, 60px);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: clamp(20px, 4vw, 32px);
+    line-height: 1.3;
+}
+
+.sous-titre {
+    font-size: clamp(16px, 3vw, 24px);
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(24px, 8vw, 32px);
+    }
+    
+    h2 {
+        font-size: clamp(20px, 7vw, 28px);
+    }
+}
     </style>
 </head>
 <body>
