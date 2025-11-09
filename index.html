@@ -7,6 +7,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+
+        /* S'assurer que le body n'a pas de défilement initial */
+body {
+    overflow: hidden;
+}
+
+/* S'assurer que seule la séquence 0 est visible */
+body:not(.content-revealed) #sequence-1,
+body:not(.content-revealed) #sequence-2,
+body:not(.content-revealed) #sequence-3,
+body:not(.content-revealed) #sequence-4,
+body:not(.content-revealed) #sequence-5 {
+    display: none !important;
+}
+
+/* Classe qui sera ajoutée au body quand le contenu est révélé */
+body.content-revealed {
+    overflow: auto;
+}
+
         /* Variables et styles de base */
         :root {
             --beige-light: #f5f1e8;
@@ -860,34 +880,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- FONCTION : Révéler tout le contenu
-    function revealContent() {
-        if (hasEntered) return;
-        hasEntered = true;
+function revealContent() {
+    if (hasEntered) return;
+    hasEntered = true;
 
-        // Effet de fondu sur l'intro
-        sequence0.style.transition = "opacity 2s ease";
-        sequence0.style.opacity = "0";
+    // Effet de fondu sur l'intro
+    sequence0.style.transition = "opacity 2s ease";
+    sequence0.style.opacity = "0";
 
-        // Révéler la navigation
-        nav.classList.add('visible');
+    // Révéler la navigation
+    nav.classList.add('visible');
 
-        // Révéler toutes les autres sections après le fondu
-        setTimeout(() => {
-            // Masquer complètement l'intro
-            sequence0.style.display = "none";
-            
-            // Révéler toutes les autres sections
-            for (let i = 1; i <= 5; i++) {
-                const section = document.getElementById(`sequence-${i}`);
-                if (section) {
-                    section.classList.add('content-visible');
-                }
+    // Révéler toutes les autres sections après le fondu
+    setTimeout(() => {
+        // Masquer complètement l'intro
+        sequence0.style.display = "none";
+        
+        // Activer le défilement sur le body
+        document.body.classList.add('content-revealed');
+        
+        // Révéler toutes les autres sections
+        for (let i = 1; i <= 5; i++) {
+            const section = document.getElementById(`sequence-${i}`);
+            if (section) {
+                section.style.display = 'block';
+                // Forcer le reflow pour l'animation
+                void section.offsetWidth;
+                section.classList.add('content-visible');
             }
-            
-            // Scroll vers le haut pour voir la première section
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 2000);
-    }
+        }
+        
+        // Scroll vers le haut pour voir la première section
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 2000);
+}
 
     // --- FONCTION : effet de fondu final (crédits)
     function fadeToBlack() {
