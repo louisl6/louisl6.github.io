@@ -41,7 +41,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
-    
-    // Auto-advance every 10 seconds
-    setInterval(nextSlide, 10000);
 });
