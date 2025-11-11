@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Fonctions pour gérer la pop-in YouTube
+// Fonctions pour gérer la pop-in YouTube
 function openYouTubePopup(videoId, title) {
     const popup = document.getElementById('youtube-popup');
     const iframe = document.getElementById('youtube-iframe');
@@ -59,7 +60,7 @@ function openYouTubePopup(videoId, title) {
     
     // Afficher la pop-in
     popup.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Empêcher le défilement
+    document.body.style.overflow = 'hidden';
 }
 
 function closeYouTubePopup() {
@@ -68,7 +69,7 @@ function closeYouTubePopup() {
     
     // Cacher la pop-in
     popup.classList.remove('active');
-    document.body.style.overflow = ''; // Rétablir le défilement
+    document.body.style.overflow = '';
     
     // Arrêter la vidéo
     iframe.src = '';
