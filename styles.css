@@ -1990,3 +1990,10 @@
 .dev-bubble-link.minimal .dev-bubble-icon {
     font-size: 1rem;
 }
+
+/* Masquer main-nav en mobile */
+@media (max-width: 768px) {
+    #main-nav {
+        display: none;
+    }
+}
