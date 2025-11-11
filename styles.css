@@ -450,6 +450,10 @@
             position: relative;
             overflow: hidden;
             border-radius: 4px;
+            background-image: url('assets/IMG_6874.PNG');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .profile-img::before {
@@ -1056,4 +1060,131 @@
 .carousel-slide p {
     margin: 0.3rem 0;
     font-size: 0.95rem;
+}
+
+/* Citations */
+/* Styles pour les citations */
+.citations {
+    margin-top: 2rem;
+}
+
+.citations h3 {
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.citations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.citation-card {
+    background: rgba(42, 42, 42, 0.7);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.citation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.citation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.citation-card:hover::before {
+    left: 100%;
+}
+
+.citation-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--beige-light);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.citation-text::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 2rem;
+    color: var(--gold);
+    font-family: serif;
+}
+
+.citation-source {
+    font-size: 0.9rem;
+    color: var(--gold);
+    text-align: right;
+    font-family: 'Cinzel', serif;
+    opacity: 0.8;
+}
+
+/* Effet de séparation entre les citations */
+.citation-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 25%;
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+}
+
+/* Animation d'apparition des citations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.citation-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.citation-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .citations-container {
+        gap: 1rem;
+    }
+    
+    .citation-card {
+        padding: 1.2rem;
+    }
+    
+    .citation-text {
+        font-size: 1rem;
+        padding-left: 1.2rem;
+    }
 }
