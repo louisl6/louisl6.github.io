@@ -332,30 +332,112 @@
     </section>
 
     <!-- SÉQUENCE 4 - JOURNAL / CARNET -->
-    <section id="sequence-4">
-        <div class="sequence-bg"></div>
-        <div class="particles" id="particles-4"></div>
-        <div class="container">
-            <h2>PROLOGUE</h2>
-            <div class="journal-grid">
-                <div class="journal-entry">
-                    <div class="entry-date">15 mars 2023</div>
-                    <h3>Critique : A Star Is Born</h3>
-                    <p>Une réflexion sur la célébrité et l'authenticité dans l'industrie musicale</p>
+<section id="sequence-4">
+    <div class="sequence-bg"></div>
+    <div class="particles" id="particles-4"></div>
+    <div class="container">
+        <h2>PROLOGUE</h2>
+        
+        <div class="prologue-grid">
+            <!-- Critique -->
+            <div class="prologue-card critique-card">
+                <div class="card-header">
+                    <h3>Dernière Critique</h3>
+                    <div class="entry-date">La French (Cédric Jimenez, 2014)</div>
                 </div>
-                <div class="journal-entry">
-                    <div class="entry-date">8 mars 2023</div>
-                    <h3>Inspiration : La photographie argentique</h3>
-                    <p>Retour aux sources avec la découverte du travail de Saul Leiter</p>
+                <div class="critique-content">
+                    <p class="critique-excerpt">
+                        "Dans La French, j'ai trouvé un polar à la fois haletant et imparfait : un film qui, sans révolutionner le genre, l'incarne avec sincérité et style. La lumière et le grain donnent à Marseille une âme singulière, entre réalisme brut et mystique urbaine. Si Jimenez échoue parfois à doser ses émotions et à approfondir ses personnages secondaires, il compense par une mise en scène habitée, portée par un vrai sens du rythme et du cadre. Un cinéma d'ambition, qui préfère viser haut quitte à rater parfois — et c'est aussi pour ça qu'il mérite qu'on s'y attarde."
+                    </p>
+                    <a href="https://boxd.it/btlBd3" target="_blank" class="btn-letterboxd">
+                        <i class="fas fa-external-link-alt"></i>
+                        Lire l'analyse complète sur Letterboxd
+                    </a>
                 </div>
-                <div class="journal-entry">
-                    <div class="entry-date">1 mars 2023</div>
-                    <h3>Réflexion : Narration non-linéaire</h3>
-                    <p>Comment raconter une histoire sans suivre la chronologie traditionnelle</p>
+            </div>
+
+            <!-- Inspirations -->
+            <div class="prologue-card inspirations-card">
+                <div class="card-header">
+                    <h3>Mes Inspirations</h3>
+                </div>
+                <div class="inspirations-content">
+                    <div class="inspiration-image">
+                        <!-- Remplacez par votre image d'inspiration -->
+                        <div class="image-placeholder">
+                            <img src="assets/moodboard.png" alt="moodboard" style="width: 100%;">
+                        </div>
+                    </div>
+                    <p class="inspiration-text">
+                        Sources d'inspiration visuelle et narrative qui influencent mon travail créatif
+                    </p>
+                </div>
+            </div>
+
+            <!-- TOP 1 -->
+            <div class="prologue-card top1-card">
+                <div class="card-header">
+                    <h3>Mes TOP 1</h3>
+                </div>
+                <div class="top1-content">
+                    <div class="top1-item">
+                        <span class="top1-category">Film</span>
+                        <div class="youtube-thumbnail-container small" onclick="openYouTubePopup('MNXRV-OspoY', 'Top 1 Film')">
+                            <img src="https://img.youtube.com/vi/MNXRV-OspoY/maxresdefault.jpg" 
+                                 alt="Top 1 Film" 
+                                 class="youtube-thumbnail"
+                                 onerror="this.src='https://img.youtube.com/vi/MNXRV-OspoY/hqdefault.jpg'">
+                            <div class="youtube-play-button">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="top1-item">
+                        <span class="top1-category">Série</span>
+                        <div class="youtube-thumbnail-container small" onclick="openYouTubePopup('LNqJnZl4imQ', 'Top 1 Série')">
+                            <img src="https://img.youtube.com/vi/LNqJnZl4imQ/maxresdefault.jpg" 
+                                 alt="Top 1 Série" 
+                                 class="youtube-thumbnail"
+                                 onerror="this.src='https://img.youtube.com/vi/LNqJnZl4imQ/hqdefault.jpg'">
+                            <div class="youtube-play-button">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="top1-item">
+                        <span class="top1-category">Musique</span>
+                        <div class="youtube-thumbnail-container small" onclick="openYouTubePopup('XFkzRNyygfk', 'Top 1 Musique')">
+                            <img src="https://img.youtube.com/vi/XFkzRNyygfk/maxresdefault.jpg" 
+                                 alt="Top 1 Musique" 
+                                 class="youtube-thumbnail"
+                                 onerror="this.src='https://img.youtube.com/vi/XFkzRNyygfk/hqdefault.jpg'">
+                            <div class="youtube-play-button">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="top1-item">
+                        <span class="top1-category">Livre</span>
+                        <a href="https://fr.wikipedia.org/wiki/Antigone_(Anouilh)" target="_blank" class="top1-link">
+                            <i class="fas fa-book"></i>
+                            Antigone - Jean Anouilh
+                        </a>
+                    </div>
+                    
+                    <div class="top1-item">
+                        <span class="top1-category">Photo</span>
+                        <div class="photo-placeholder">
+                            <img src="assets/fav.png" alt="Photographie favorite" style="width: 100%;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- SÉQUENCE 5 - CONTACT -->
     <section id="sequence-5">
